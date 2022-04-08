@@ -13,22 +13,19 @@ function teamBuilder() {
         message: "What's the employee's title",
         choices: ["Manager", "Engineer", "Intern"]
         },
-        {when: input => {
-            return input.role === "Manager"
-        },{
+        {
             when: input => {
                 return input.role == "Manager"
             },
             type: "input",
-            name: "github",
-            message: "Enter your github username:",
+            name: "office",
+            message: "Office Number:",
         },
 
-        }
+        
 
 
     
 
 
-    }])
-}
+])}
