@@ -8,6 +8,69 @@ const inquirer = require("inquirer");
 const markdown = require("./generateMarkdown.js");
 const teamCreation = [];
 
+//TODO If I make 3 separate functions for the classes (intern, engineer, manager)
+//TODO if I call on 1 it has to run the the prompts (so make new questions cause they all differ by 1) = make 3 consts for them
+//TODO Have to add add another team member somehow...
+//TODO Make it writeFile into html
+
+const managerPrompts = [
+    {
+    type: "input",
+    name: "name",
+    message: "What's the manager's name?",
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What's the manager's id number?",
+    },
+    {
+        type: "input",
+        name: "office",
+        message: "What's the manager's office number?",
+    },
+]
+
+const engineerPrompts = [
+    {
+    type: "input",
+    name: "name",
+    message: "What's the engineer's name?",
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What's the engineer's id number?",
+    },
+    {
+        type: "input",
+        name: "office",
+        message: "What's the engineer's github account?",
+    },
+]
+
+const internPrompts = [
+    {
+    type: "input",
+    name: "name",
+    message: "What's the intern's name?",
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What's the intern's id number?",
+    },
+    {
+        type: "input",
+        name: "office",
+        message: "What school does the intern attend?",
+    },
+]
+
+function callManager() {
+    //*must call Manager
+}
+
 
 function teamBuilder() {
     inquirer
@@ -17,60 +80,6 @@ function teamBuilder() {
         message: "What's the employee's title",
         choices: ["Manager", "Engineer", "Intern"]
         },
-        {
-            type: "input",
-            name: "name",
-            message: "What is your name?",
-        },
-        {
-            type: "input",
-            name: "id",
-            message: "What is your id?",
-        },
-        {
-            type: "input",
-            name: "officeNumber",
-            message: "Office Number:",
-            when: answer => {
-                if (answer.employeeTitle === "Manager") {
-                    return true;
-                }
-            },
-        },
-        {
-            type: "input",
-            name: "github",
-            message: "Github username:",
-            when: answer => {
-                if (answer.employeeTitle === "Engineer") {
-                    return true;
-                }
-            },
-        },
-        {
-            type: "input",
-            name: "school",
-            message: "School Name:",
-            when: answer => {
-                if (answer.employeeTitle === "Intern") {
-                    return true;
-                }
-            },
-        },
-        // {
-        //     type: "list",
-        //     name: "addAnother",
-        //     message: "Would you like to add another employee?",
-        //     choices: ["yes", "no"],
-        //     if (answer.addAnother = "yes") {
-        //         teamBuilder();
-        //     }else {
-                
-        //     }
-        // }
-        
-    ]).then((answer) => {
-        console.log(answer.employeeTitle, answer.officeNumber, answer.github, answer.school, answer.name, answer.id);
-
-        fs.writeFile("index.html", markdown({ ...answer }), (err) => err ? console.log(err) : console.log("Success"))
-    })}
+    
+    
+    ])}
