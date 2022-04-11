@@ -1,5 +1,16 @@
 const Employee = require("../Employee")
 
+describe('Employee', () => {
+    it('should return a name after the user writes one', () => {
+    });
+    
+    it('should return an email after the user writes one', () => {
+    });
+
+    it('should return an id number after the user writes one', () => {
+    });
+
+});
 test()
 
 
