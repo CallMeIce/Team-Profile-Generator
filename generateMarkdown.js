@@ -1,4 +1,4 @@
-function generateMarkdown(data) {
+function generateMarkdown(layout) {
     return `
     
     <!DOCTYPE html>

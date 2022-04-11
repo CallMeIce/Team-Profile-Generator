@@ -66,10 +66,14 @@ const internPrompts = [
         message: "What school does the intern attend?",
     },
 ]
+    //* Make a manager/intern/engineer function that calls the prompts and has to call the employee.js
+
 
 function callManager() {
-    //*must call Manager prompts
-    const managerCard = 
+
+    const managerCard = new Manager();
+    teamCreation.push(managerCard)
+
 
 
 }
