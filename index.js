@@ -68,7 +68,10 @@ const internPrompts = [
 ]
 
 function callManager() {
-    //*must call Manager
+    //*must call Manager prompts
+    const managerCard = 
+
+
 }
 
 
