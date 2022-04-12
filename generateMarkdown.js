@@ -1,7 +1,7 @@
 const Engineer = require("./Engineer");
 const teamBuilder = require("./index")
 
-function generateMarkdown(engineer) {
+function generateMarkdown(engineerDiv) {
   return `
     
     <!DOCTYPE html>
@@ -20,7 +20,7 @@ function generateMarkdown(engineer) {
         
 
           
-          ${engineer}
+          ${engineerDiv}
 
 
           

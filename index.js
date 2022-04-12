@@ -43,7 +43,7 @@ function teamBuilder() {
                             }
                         ]).then((answer) => {
                             //obj creation
-                            console.log("this is the data for engieer", Engineer);
+                            console.log("this is the data for engineer", Engineer);
                             let engineerDiv = `          <div class="card" style="width: 18rem;">
                             <div class="card-header">
                               Engineer
@@ -56,8 +56,10 @@ function teamBuilder() {
                             </ul>
                             </div>`
                             console.log(engineerDiv);
-                            teamCreation.push(answer);
+                            // teamCreation.push(engineerDiv);
                             teamBuilder();
+                            console.log("---------------", teamCreation);
+                            console.log(JSON.stringify(answer));
                         })
                 }
                 engineerCard();
@@ -89,7 +91,7 @@ function teamBuilder() {
                         ]).then((answer) => {
                             //obj creation
 
-                            console.log(Engineer);
+                            console.log(Intern);
                             teamCreation.push(answer);
                             teamBuilder();
                         })
