@@ -59,7 +59,7 @@ function teamBuilder() {
                             // teamCreation.push(engineerDiv);
                             teamBuilder();
                             console.log("---------------", teamCreation);
-                            console.log(JSON.stringify(answer));
+                            console.log(answer);
                         })
                 }
                 engineerCard();
@@ -92,6 +92,18 @@ function teamBuilder() {
                             //obj creation
 
                             console.log(Intern);
+                            let internDiv = `          <div class="card" style="width: 18rem;">
+                            <div class="card-header">
+                              Intern
+                            </div>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">${answer.name}</li>
+                              <li class="list-group-item">${answer.id}</li>
+                              <li class="list-group-item">${answer.email}</li>
+                              <li class="list-group-item">${answer.school}</li>
+                            </ul>
+                            </div>`
+                            console.log(internDiv);
                             teamCreation.push(answer);
                             teamBuilder();
                         })
@@ -126,6 +138,18 @@ function teamBuilder() {
                                 answer.name, answer.id, answer.email, answer.officeNumber
                             )
                             console.log(manager);
+                            let managerDiv = `          <div class="card" style="width: 18rem;">
+                            <div class="card-header">
+                              Manager
+                            </div>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">${answer.name}</li>
+                              <li class="list-group-item">${answer.id}</li>
+                              <li class="list-group-item">${answer.email}</li>
+                              <li class="list-group-item">${answer.officeNumber}</li>
+                            </ul>
+                            </div>`
+                            console.log(managerDiv);
                             teamCreation.push(manager);
                             teamBuilder();
                         });

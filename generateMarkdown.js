@@ -1,7 +1,7 @@
 const Engineer = require("./Engineer");
-const teamBuilder = require("./index")
+const teamBuilder = require("./index.js")
 
-function generateMarkdown(engineerDiv) {
+function generateMarkdown(teamBuilder) {
   return `
     
     <!DOCTYPE html>
@@ -18,17 +18,15 @@ function generateMarkdown(engineerDiv) {
     <body>
         <header class="nav justify-content-center navbar navbar-dark bg-primary text-light fs-1">Team</header>
         
-
+        
           
-          ${engineerDiv}
-
-
+          ${teamBuilder}
+          
           
     </body>
     </html>`
 
 }
-
 module.exports = generateMarkdown;
 
 {/* <div class="card" style="width: 18rem;">
