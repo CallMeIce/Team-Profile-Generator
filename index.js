@@ -104,7 +104,7 @@ function teamBuilder() {
                             </ul>
                             </div>`
                             console.log(internDiv);
-                            teamCreation.push(answer);
+                            teamCreation.push(internDiv);
                             teamBuilder();
                         })
                 }
@@ -150,14 +150,15 @@ function teamBuilder() {
                             </ul>
                             </div>`
                             console.log(managerDiv);
-                            teamCreation.push(manager);
+                            teamCreation.push(managerDiv);
                             teamBuilder();
                         });
                 }
                 managerCard();
             } else if (answer.employeeTitle === 'Done') {
+                console.log("-----------", teamCreation);
                 //*Call the done and write everything to html file
-                fs.writeFile("cards.html", markdown ({ ...JSON.stringify(answer)}), (err) => err ? console.log(err) : console.log("Success"))
+                fs.writeFile("cards.html", markdown (teamCreation), (err) => err ? console.log(err) : console.log("Success"))
             }
         })
 }

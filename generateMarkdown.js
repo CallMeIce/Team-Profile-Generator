@@ -4,7 +4,8 @@ const Manager = require("./Manager");
 const Intern = require("./Intern")
 
 
-function generateMarkdown() {
+function generateMarkdown(answer) {
+  console.log('============', answer);
   return `
     
     <!DOCTYPE html>
@@ -21,12 +22,8 @@ function generateMarkdown() {
     <body>
         <header class="nav justify-content-center navbar navbar-dark bg-primary text-light fs-1">Team</header>
 
-        ${JSON.stringify(Manager)}
+        ${answer.map((card) => card)}
         
-          
-        ${JSON.stringify(Engineer)}
-          
-        ${JSON.stringify(Intern)}
           
     </body>
     </html>`
@@ -34,7 +31,7 @@ function generateMarkdown() {
 }
 module.exports = generateMarkdown;
 
-{/* <div class="card" style="width: 18rem;">
+/* <div class="card" style="width: 18rem;">
 <div class="card-header">
   Engineer
 </div>
@@ -43,4 +40,4 @@ module.exports = generateMarkdown;
   <li class="list-group-item">A second item</li>
   <li class="list-group-item">A third item</li>
 </ul>
-</div> */}
+</div> */
