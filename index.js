@@ -43,18 +43,19 @@ function teamBuilder() {
                             }
                         ]).then((answer) => {
                             //obj creation
-                            console.log(Engineer);
+                            console.log("this is the data for engieer", Engineer);
                             let engineerDiv = `          <div class="card" style="width: 18rem;">
                             <div class="card-header">
                               Engineer
                             </div>
                             <ul class="list-group list-group-flush">
-                              <li class="list-group-item">Name</li>
-                              <li class="list-group-item">id</li>
-                              <li class="list-group-item">email</li>
-                              <li class="list-group-item">github</li>
+                              <li class="list-group-item">${answer.name}</li>
+                              <li class="list-group-item">${answer.id}</li>
+                              <li class="list-group-item">${answer.email}</li>
+                              <li class="list-group-item">${answer.github}</li>
                             </ul>
                             </div>`
+                            console.log(engineerDiv);
                             teamCreation.push(answer);
                             teamBuilder();
                         })
@@ -130,9 +131,11 @@ function teamBuilder() {
                 managerCard();
             } else if (answer.employeeTitle === 'Done') {
                 //*Call the done and write everything to html file
-                fs.writeFile("index.html", markdown({ ...answer }), (err) => err ? console.log(err) : console.log("Success"))
+                fs.writeFile("cards.html", markdown({ ...answer }), (err) => err ? console.log(err) : console.log("Success"))
             }
         })
 }
 
 teamBuilder();
+
+module.exports = teamBuilder;

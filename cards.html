@@ -1,8 +1,4 @@
-const Engineer = require("./Engineer");
-const teamBuilder = require("./index")
 
-function generateMarkdown(engineer) {
-  return `
     
     <!DOCTYPE html>
     <html lang="en">
@@ -20,24 +16,9 @@ function generateMarkdown(engineer) {
         
 
           
-          ${engineer}
+          [object Object]
 
 
           
     </body>
-    </html>`
-
-}
-
-module.exports = generateMarkdown;
-
-{/* <div class="card" style="width: 18rem;">
-<div class="card-header">
-  Engineer
-</div>
-<ul class="list-group list-group-flush">
-  <li class="list-group-item">An item</li>
-  <li class="list-group-item">A second item</li>
-  <li class="list-group-item">A third item</li>
-</ul>
-</div> */}
+    </html>
