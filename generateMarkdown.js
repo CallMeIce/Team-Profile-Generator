@@ -1,5 +1,5 @@
 function generateMarkdown(layout) {
-    return `
+  return `
     
     <!DOCTYPE html>
     <html lang="en">
@@ -17,7 +17,29 @@ function generateMarkdown(layout) {
         
         <div class="card" style="width: 18rem;">
             <div class="card-header">
-              Featured
+              Manager
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"></li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+            </ul>
+          </div>
+          
+          <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              Engineer
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+            </ul>
+            </div>
+          
+            <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              Intern
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">An item</li>
@@ -26,9 +48,10 @@ function generateMarkdown(layout) {
             </ul>
           </div>
           
+          
     </body>
     </html>`
-    
+
 }
 
 module.exports = generateMarkdown;

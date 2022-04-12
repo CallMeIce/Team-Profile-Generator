@@ -8,7 +8,7 @@ const markdown = require("./generateMarkdown.js");
 const teamCreation = [];
 
 function teamBuilder() {
-        inquirer
+    inquirer
         .prompt([{
             type: "list",
             name: "employeeTitle",
@@ -29,7 +29,7 @@ function teamBuilder() {
                             {
                                 type: "input",
                                 name: "id",
-                                message: "What is your manager's id?",
+                                message: "What is your engineer's id?",
                             },
                             {
                                 type: "input",
@@ -38,18 +38,28 @@ function teamBuilder() {
                             },
                             {
                                 type: "input",
-                                name: "officeNumber",
+                                name: "github",
                                 message: "Engineer's GitHub Profile:",
                             }
                         ]).then((answer) => {
                             //obj creation
-
                             console.log(Engineer);
+                            let engineerDiv = `          <div class="card" style="width: 18rem;">
+                            <div class="card-header">
+                              Engineer
+                            </div>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Name</li>
+                              <li class="list-group-item">id</li>
+                              <li class="list-group-item">email</li>
+                              <li class="list-group-item">github</li>
+                            </ul>
+                            </div>`
                             teamCreation.push(answer);
                             teamBuilder();
                         })
-                    }
-                    engineerCard();
+                }
+                engineerCard();
             } else if (answer.employeeTitle === "Intern") {
                 //*Call intern function
                 function internCard() {
@@ -77,13 +87,13 @@ function teamBuilder() {
                             }
                         ]).then((answer) => {
                             //obj creation
-                            
+
                             console.log(Engineer);
                             teamCreation.push(answer);
                             teamBuilder();
                         })
-                    }
-                    internCard();
+                }
+                internCard();
             } else if (answer.employeeTitle === 'Manager') {
                 function managerCard() {
                     inquirer
@@ -118,7 +128,7 @@ function teamBuilder() {
                         });
                 }
                 managerCard();
-            } else if (answer.employeeTitle === 'Done'){
+            } else if (answer.employeeTitle === 'Done') {
                 //*Call the done and write everything to html file
                 fs.writeFile("index.html", markdown({ ...answer }), (err) => err ? console.log(err) : console.log("Success"))
             }

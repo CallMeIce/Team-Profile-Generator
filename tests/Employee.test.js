@@ -1,19 +1,6 @@
 const Employee = require("../lib/Employee")
 
-test("user input id", () => {
-    const id = 24
-    const emp = new Employee(id)
-    expect(emp.id).toBe(id)
-})
-
-test("user input name", () => {
-    const name = "Bob"
-    const empName =  new Employee(name)
-    expect(empName.name).toBe(name)
-})
-
-test("user input email", () => {
-    const email = "test@test.com"
-    const empEmail =  new Employee(email)
-    expect(empEmail.email).toBe(email)
-})
+test("Employee test id, name, and email", () => {
+    const employee = new Employee("id20", "Zack", "test2@test.com")
+    expect(employee.getName()).toBe("Zack")
+} )
