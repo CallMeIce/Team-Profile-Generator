@@ -1,7 +1,10 @@
 const Engineer = require("./Engineer");
-const teamBuilder = require("./index.js")
+const teamBuilder = require("./index.js");
+const Manager = require("./Manager");
+const Intern = require("./Intern")
 
-function generateMarkdown(teamBuilder) {
+
+function generateMarkdown() {
   return `
     
     <!DOCTYPE html>
@@ -17,11 +20,13 @@ function generateMarkdown(teamBuilder) {
     
     <body>
         <header class="nav justify-content-center navbar navbar-dark bg-primary text-light fs-1">Team</header>
-        
+
+        ${JSON.stringify(Manager)}
         
           
-          ${teamBuilder}
+        ${JSON.stringify(Engineer)}
           
+        ${JSON.stringify(Intern)}
           
     </body>
     </html>`

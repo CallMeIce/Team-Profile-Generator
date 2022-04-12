@@ -56,9 +56,9 @@ function teamBuilder() {
                             </ul>
                             </div>`
                             console.log(engineerDiv);
-                            // teamCreation.push(engineerDiv);
+                            teamCreation.push(engineerDiv);
                             teamBuilder();
-                            console.log("---------------", teamCreation);
+                            console.log(teamCreation);
                             console.log(answer);
                         })
                 }
@@ -157,7 +157,7 @@ function teamBuilder() {
                 managerCard();
             } else if (answer.employeeTitle === 'Done') {
                 //*Call the done and write everything to html file
-                fs.writeFile("cards.html", markdown({ ...answer }), (err) => err ? console.log(err) : console.log("Success"))
+                fs.writeFile("cards.html", markdown ({ ...JSON.stringify(answer)}), (err) => err ? console.log(err) : console.log("Success"))
             }
         })
 }
