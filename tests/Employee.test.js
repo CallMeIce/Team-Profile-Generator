@@ -8,5 +8,12 @@ test("user input id", () => {
 
 test("user input name", () => {
     const name = "Bob"
-    const empName =  
+    const empName =  new Employee(name)
+    expect(empName.name).toBe(name)
+})
+
+test("user input email", () => {
+    const email = "test@test.com"
+    const empEmail =  new Employee(email)
+    expect(empEmail.email).toBe(email)
 })

@@ -112,51 +112,13 @@ function teamBuilder() {
                 internCard();
             } else {
                 //*Call the done and write everything to html file
+                
+                fs.writeFile("index.html", markdown({ ...answer }), (err) => err ? console.log(err) : console.log("Success"))
             }
 
         })
 }
 
-// {
-//     type: "input",
-//     name: "name",
-//     message: "What is your name?",
-// },
-// {
-//     type: "input",
-//     name: "id",
-//     message: "What is your id?",
-// },
-// {
-//     type: "input",
-//     name: "officeNumber",
-//     message: "Office Number:",
-//     when: answer => {
-//         if (answer.employeeTitle === "Manager") {
-//             return true;
-//         }
-//     },
-// },
-// {
-//     type: "input",
-//     name: "github",
-//     message: "Github username:",
-//     when: answer => {
-//         if (answer.employeeTitle === "Engineer") {
-//             return true;
-//         }
-//     },
-// },
-// {
-//     type: "input",
-//     name: "school",
-//     message: "School Name:",
-//     when: answer => {
-//         if (answer.employeeTitle === "Intern") {
-//             return true;
-//         }
-//     },
-// },
 // {
 //     type: "list",
 //     name: "addAnother",
