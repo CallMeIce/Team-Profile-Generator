@@ -7,47 +7,13 @@ const inquirer = require("inquirer");
 const markdown = require("./generateMarkdown.js");
 const teamCreation = [];
 
-function managerCard() {
-    inquirer
-        .prompt([
-            {
-                type: "input",
-                name: "name",
-                message: "What is your manager's name?",
-            },
-            {
-                type: "input",
-                name: "id",
-                message: "What is your manager's id?",
-            },
-            {
-                type: "input",
-                name: "email",
-                message: "What is your manager's email?",
-            },
-            {
-                type: "input",
-                name: "officeNumber",
-                message: "Manager's Office Number:",
-            }])
-        .then((answer) => {
-            const manager = new Manager(
-                answer.name, answer.id, answer.email, answer.officeNumber
-            )
-            console.log(manager);
-            teamCreation.push(manager);
-            teamBuilder();
-        });
-}
-managerCard();
-
 function teamBuilder() {
-    inquirer
+        inquirer
         .prompt([{
             type: "list",
             name: "employeeTitle",
             message: "What's the employee's title",
-            choices: ["Engineer", "Intern", "Done"]
+            choices: ["Engineer", "Intern", "Manager", "Done"]
         }
         ]).then((answer) => {
             if (answer.employeeTitle === "Engineer") {
@@ -75,11 +41,15 @@ function teamBuilder() {
                                 name: "officeNumber",
                                 message: "Engineer's GitHub Profile:",
                             }
-                        ]) 
-                }
-                console.log(Engineer);
-                teamCreation.push(Engineer);
-                engineerCard();
+                        ]).then((answer) => {
+                            //obj creation
+
+                            console.log(Engineer);
+                            teamCreation.push(answer);
+                            teamBuilder();
+                        })
+                    }
+                    engineerCard();
             } else if (answer.employeeTitle === "Intern") {
                 //*Call intern function
                 function internCard() {
@@ -105,30 +75,54 @@ function teamBuilder() {
                                 name: "school",
                                 message: "What is your intern's school name?:",
                             }
-                        ])
+                        ]).then((answer) => {
+                            //obj creation
+                            
+                            console.log(Engineer);
+                            teamCreation.push(answer);
+                            teamBuilder();
+                        })
+                    }
+                    internCard();
+            } else if (answer.employeeTitle === 'Manager') {
+                function managerCard() {
+                    inquirer
+                        .prompt([
+                            {
+                                type: "input",
+                                name: "name",
+                                message: "What is your manager's name?",
+                            },
+                            {
+                                type: "input",
+                                name: "id",
+                                message: "What is your manager's id?",
+                            },
+                            {
+                                type: "input",
+                                name: "email",
+                                message: "What is your manager's email?",
+                            },
+                            {
+                                type: "input",
+                                name: "officeNumber",
+                                message: "Manager's Office Number:",
+                            }])
+                        .then((answer) => {
+                            const manager = new Manager(
+                                answer.name, answer.id, answer.email, answer.officeNumber
+                            )
+                            console.log(manager);
+                            teamCreation.push(manager);
+                            teamBuilder();
+                        });
                 }
-                console.log(Intern);
-                teamCreation.push(Intern);
-                internCard();
-            } else {
+                managerCard();
+            } else if (answer.employeeTitle === 'Done'){
                 //*Call the done and write everything to html file
-                
                 fs.writeFile("index.html", markdown({ ...answer }), (err) => err ? console.log(err) : console.log("Success"))
             }
-
         })
 }
 
-// {
-//     type: "list",
-//     name: "addAnother",
-//     message: "Would you like to add another employee?",
-//     choices: ["yes", "no"],
-//     if (answer.addAnother = "yes") {
-//         teamBuilder();
-//     }else {
-
-//     }
-// }
-
-// teamBuilder();
+teamBuilder();
