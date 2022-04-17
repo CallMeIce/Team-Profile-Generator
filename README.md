@@ -27,6 +27,10 @@ Dom - https://github.com/dev-dominick
 
 MIT License
 
+## Links
+
+ https://github.com/CallMeIce/Team-Profile-Generator
+
 ## Features
 
 N/A

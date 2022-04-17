@@ -51,8 +51,8 @@ function teamBuilder() {
                             <ul class="list-group list-group-flush">
                               <li class="list-group-item">${answer.name}</li>
                               <li class="list-group-item">${answer.id}</li>
-                              <li class="list-group-item">${answer.email}</li>
-                              <li class="list-group-item">${answer.github}</li>
+                              <li class="list-group-item"><a href="${answer.email}">${answer.email}</a></li>
+                              <li class="list-group-item"><a href="www.github.com/${answer.github}">www.github.com/${answer.github}</a></li>
                             </ul>
                             </div>`
                             console.log(engineerDiv);
@@ -99,7 +99,7 @@ function teamBuilder() {
                             <ul class="list-group list-group-flush">
                               <li class="list-group-item">${answer.name}</li>
                               <li class="list-group-item">${answer.id}</li>
-                              <li class="list-group-item">${answer.email}</li>
+                              <li class="list-group-item"><a href="${answer.email}">${answer.email}</a></li>
                               <li class="list-group-item">${answer.school}</li>
                             </ul>
                             </div>`
@@ -145,7 +145,7 @@ function teamBuilder() {
                             <ul class="list-group list-group-flush">
                               <li class="list-group-item">${answer.name}</li>
                               <li class="list-group-item">${answer.id}</li>
-                              <li class="list-group-item">${answer.email}</li>
+                              <li class="list-group-item"><a href="${answer.email}">${answer.email}</a></li>
                               <li class="list-group-item">${answer.officeNumber}</li>
                             </ul>
                             </div>`
