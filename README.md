@@ -29,7 +29,9 @@ MIT License
 
 ## Links
 
- https://github.com/CallMeIce/Team-Profile-Generator
+Github Repo - https://github.com/CallMeIce/Team-Profile-Generator
+
+Video Walkthrough - https://drive.google.com/file/d/1eoJh--ItsV7rcUx9Jd2ionVdHneW_qOA/view
 
 ## Features
 

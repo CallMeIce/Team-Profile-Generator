@@ -1,10 +1,10 @@
-const Employee = require("./Employee");
-const Manager = require("./Manager");
-const Engineer = require("./Engineer");
-const Intern = require("./Intern");
+const Employee = require("../Employee");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 const fs = require("fs");
 const inquirer = require("inquirer");
-const markdown = require("./generateMarkdown.js");
+const markdown = require("./lib/generateMarkdown.js");
 const teamCreation = [];
 
 function teamBuilder() {
